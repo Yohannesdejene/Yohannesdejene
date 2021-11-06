@@ -1,0 +1,1806 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
+#include <cstring>
+#include <string.h>
+#include <conio.h>
+#include <cctype>
+#include <stdlib.h>
+
+
+using namespace std;
+double tradfood[5]={200,100,150,180,70};
+double abroadfood[6]={100,70,150,50,30,200};
+double traddrink[3]={10,15,5};
+double abroaddrink[6]={150,40,400,300,350,10};
+double bedcost[3]={300,500,1000};
+class hotel
+{
+  private:
+	char username[30];
+	char userpass[30];
+	char userphone[30];
+	char useridno[30];
+	double usermoney;
+	double usertip;
+	int usertype;
+	int room_no;
+	char comment[2000];
+	char createdby[30];
+	public:
+
+
+
+
+
+       
+	void login();
+	int checkuser1(char usn[30], char usp[30]);
+	int checkuser2(char usn[30], char usp[30]);
+	int checkroomno(int rno);
+	void createmanager();
+
+	void createemployee();
+	void createcustomer();
+	void paymoneyemp(double price);
+	void paymoneycus(double price);
+	void transfermoney();
+	void checkmymoneyemp();
+	void checkmymoneyman();
+	
+	void displaybeds();
+	void displaycustomers();
+	void displayemployees();
+	void displaymangers();
+	void displaytradfood();
+	void displayabroadfood();
+	void displaytraddrink();
+	void displayabroaddrink();
+	void showfood();
+	void showdrink();
+	void searchcustomerNA();
+    void searchroomNO();
+    void searchemployeeNA();
+    void putcomment();
+    void viewcomment();
+     
+    void deletecustomer();
+    void deleteemployee();
+	void editcustomer();
+	void editemployee();
+	
+	void managermanu();
+	void employeemanu();
+	void customermanu();
+	
+	
+	void pay(double x)
+	{
+	usermoney+=x;
+	}   
+    void paytip(double x)
+    {
+     usertip+=x;
+     }
+      void putcom(char com[2000])
+      {
+      strcat(comment,com);
+      }
+       
+};
+	char name[30];
+	char password[30];
+	
+void hotel::login()
+{
+log:
+//	char name[30];
+//	char password[30];
+	int flag;
+	cout << "\t\tEnter your user name:";
+         cin.getline(name, 30);cout<<endl;
+	for (int a = 0; a <= 30; a++)
+		name[a] = toupper(name[a]);
+	cout << "\t\tEnter your password:";
+	cin.getline(password, 30);
+	cout<<endl;
+	flag = checkuser1(name, password);
+	if ((strcmp(name ,"YOH") == 0) && (strcmp(password,"12345") == 0))
+	{
+
+cout << "Well come to manager admin\n";
+cout << "Create another manager\n";
+createmanager();
+//checkmymoney();	
+	}
+else if (flag == 1)
+	{
+managermanu();
+	}
+else if (flag == 2)
+	{
+employeemanu();
+    }
+	else if (flag == 3)
+	{
+customermanu();
+	}
+	else
+	{
+	cout << "\tNo matching account try again\n";
+	goto log;
+	}
+}
+/////////////&&&&&&&&&&&&&&
+
+void hotel::managermanu()
+{
+cout<<"\n===========================================================\n\n";
+cout << "\t\t\tWELL COME DEAR MANGER\n\n";
+cout<<"============================================================\n\n\n";
+
+manager:
+int choice1;
+char again[2];
+do
+{
+system ("CLS");
+cout<<"\t\t\tCHOOSE ONE\n\n\n";
+cout << "\t\t\t1.CREATE NEW EMPLOTEE\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t2.DELETE EMPLOYEE\n\n";cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t3.EDIT EMPMOYE\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t4.SEARCH EMPLOYEE NAME \n\n";
+cout<<"------------------------------------------------------------\n";
+cout<< "\t\t\t5. DISPLAY EMPLOYEES\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t6.DISPLAY ALL CUSTOMERS\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t7.CHECK MY MONEY ACCOUNT\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t8.VIEW COMMENTS\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t9.BACK TO MAIN MANU\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t10.EXIT\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\n\tEnter your choice:";
+	cin >> choice1;
+	cout<<endl;
+	cin.ignore();
+	if(cin)
+	{
+	switch (choice1)
+		{
+		case 1:
+	{
+		createemployee();
+		break;
+		}
+		case 2:
+		{
+	  deleteemployee();
+		break;
+		}
+		case 3:
+		{
+	 editemployee();
+	 break;
+		}
+		case 4:
+		{
+ 	searchemployeeNA();
+	break;
+		}
+ 	case 5:
+		{
+	displayemployees();
+	break;
+		}
+	case 6:
+	   {
+	displaycustomers();
+		break;
+		}
+	case 7:
+		{
+	 checkmymoneyman();
+	break;
+		}
+	case 8:
+		{
+	viewcomment();
+	break;
+		}
+	case 9:
+	  {
+	goto manager;
+    //	break;
+ 	}
+ 	case 10:
+		{
+			 return ;
+		}
+		default:
+			{
+cout << "\n\tINVALID CHOICE TRY AGAIN\n";
+			goto manager;
+			}
+		}}
+	while(!cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout <<"\n\tINVALID CHOICE TRY AGAIN\n";	
+	goto manager;
+	}
+cout<<"\n\tPress any key to continue :";
+cin.getline(again,2);
+cout<<endl;
+} while (again != 0);
+}
+
+
+///////&$$$$$$$$$$===
+void hotel::employeemanu()
+{
+cout<<"\n===========================================================\n\n";
+cout << "\t\t\tWELL COME DEAR EMPLOYEE\n\n";
+cout<<"============================================================\n\n";
+	
+char again[2];
+manuemp:
+	int choice1;
+	do
+	{
+ 
+cout<<"\t\t\tCHOOSE ONE\n\n";
+cout << "\t\t\t1.CHECK IN NEW CUSTOMER\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t2.CHECK OUT CUSTOMER\n \n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t3.EDIT CUSTOMER\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t4.SERACH  ROOM NUMBER\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t5.DISPLAY ALL CUSTOMERS\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t6.CHECK MY MONEY ACCOUNT\n\n";
+cout<<"------------------------------------------------------------\n";
+cout <<"\t\t\t7.TRANSFER MONEY TO MANAGER \n\n";
+cout<<"------------------------------------------------------------\n";
+cout <<"\t\t\t8.VIEW COMMENTS\n\n";
+cout<<"------------------------------------------------------------\n";
+cout <<"\t\t\t9.BACK TO MAIN MANU\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t10.EXIT\n\n";
+cout<<"------------------------------------------------------------\n";  
+  cout << "\n\tEnter your choice :";
+	cin >> choice1;cout<<endl;
+	cin.ignore();
+		if (cin)
+		{
+			switch (choice1)
+			{
+			case 1:
+			{
+				createcustomer();
+				break;
+			}
+			case 2:
+			{
+			 deletecustomer();
+				break;
+			}
+			case 3:
+		{
+			editcustomer();
+				break;
+			}
+			case 4:
+			{
+			searchroomNO();
+				break;
+			}
+			case 5:
+			{
+			displaycustomers();
+				break;
+			}
+		case 6:
+			{
+			checkmymoneyemp();
+			break;
+			}
+			case 7:
+			{
+			transfermoney();	
+			break;
+			}
+			case 8:
+			{
+	    viewcomment();
+				break;
+			}
+			case 9:
+			{
+		goto manuemp;		
+			}
+			case 10:
+			{
+				return ;
+			}
+	  	default:
+			{
+				cout << "\n\tInvalid choice try again\n";
+				goto manuemp;
+		}}}
+		while (!cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout <<"\n\tInvalid choice try again\n";          goto manuemp;
+	}
+cout<<"\n\tPress any key to continue :";
+cin.getline(again,2);
+cout<<endl;
+	} while (again != 0);
+}
+////@$$$$$$&=$$&$$$$$$
+void hotel::customermanu()
+{
+cout<<"\n===========================================================\n\n";
+cout << "\t\t\tWELL COME DEAR CUSTOMER\n\n";
+cout<<"============================================================\n\n";
+
+manuus:
+	int choice1;
+	char again[2];
+	do
+	{
+cout<<"\t\t\tCHOOSE ONE\n\n";
+cout <<"\t\t\t1.FOR FOOD\n\n";
+cout<<"------------------------------------------------------------\n";
+cout <<"\t\t\t2.FOR DRINKS\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t3.PUT COMMENT\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t4.BACK TO MANU\n\n\n";
+cout<<"------------------------------------------------------------\n";
+cout << "\t\t\t5.EXIT\n\n";
+cout<<"-------------------------------------------------------\n";		
+	cout << "\n\tEnter your choice :";
+		cin >> choice1;
+		cout<<endl;
+		cin.ignore();
+		if (cin)
+		{
+			switch (choice1)
+			{
+		case 1:
+		{
+				showfood();
+				break;
+		}
+		case 2:
+		{
+	  		showdrink();
+				break;
+		}
+ 	case 3:
+		{
+			putcomment();
+			break;
+		}
+		case 4:
+		{
+	 		goto manuus;
+		}
+		case 5:
+		{
+	  return ;
+		}
+	default:
+	{
+		cout << "\tInvalid choice try again\n";
+		goto manuus;
+	}
+}}
+	while (!cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout << "\tInvalid choice try again\n";
+		goto manuus;
+	}
+ cout<<"\n\tPress any key to continue :";
+ cin.getline(again,2);
+  cout<<endl;
+} while (again != 0);
+}
+
+
+
+
+
+////@=&=@=@=@=@=
+int hotel::checkuser1(char usn[30], char usp[30])
+{
+	fstream file;
+	file.open("myhotel.jo", ios::in | ios::binary);
+	if (file.is_open())
+	{
+		while (file.read((char *)this, sizeof(hotel)))
+		{
+			if ((strcmp(username, usn) == 0) && (strcmp(userpass, usp) == 0))
+			{
+				if (usertype == 1)
+					return 1;
+				else if (usertype == 2)
+					return 2;
+				else if (usertype == 3)
+					return 3;
+			}
+		}
+		file.close();
+	}
+}
+///////////&&&&&&&&
+int hotel::checkuser2(char usn[30], char usp[30])
+{
+	int flag = 0;
+	fstream file;
+	file.open("myhotel.jo", ios::in | ios::binary);
+	if (file.is_open())
+	{
+		while (file.read((char *)this, sizeof(hotel)))
+		{
+			if ((strcmp(username, usn) == 0) && (strcmp(userpass, usp) == 0))
+			{
+				flag = 1;
+				break;
+			}
+		}
+		file.close();
+	}
+	return flag;
+}
+int hotel::checkroomno(int rno)
+{
+int flag=0;
+fstream file;
+file.open("myhotel.jo",ios::in|ios::binary);
+if(file.is_open())
+{
+while(file.read((char*)this,sizeof(hotel)))
+{
+if(room_no==rno)
+{
+flag=1;
+break;
+}}
+file.close();
+}
+return flag;
+}
+	
+///////////////&&&&&&&&
+void hotel::createmanager()
+{
+create:
+	int flag;
+	char usn[30];
+	char usp[30];
+	char usphone[30];
+	char usidno[30];
+	int ustype;
+	double money;
+	cout << "\n\tCreating manager account........\n";
+	cout <<"\tEnter the name :";
+	cin.getline(usn, 30);
+	cout<<endl;
+	for (int a = 0; a <= 30; a++)
+	usn[a] = toupper(usn[a]);
+	cout <<"\tEnter the password :";
+	cin.getline(usp, 30);cout<<endl;
+	cout <<"\tEnter the phone number :";
+	cin.getline(usphone, 30);cout<<endl;
+	cout << "\tEnter the id no :";
+	cin.getline(usidno, 30);cout<<endl;
+   us:
+	ustype = 1;
+
+	money=0.0;
+	flag = checkuser2(usn, usp);
+	fstream file;
+	file.open("myhotel.jo", ios::in | ios::out | ios::app | ios::binary);
+	if (file.is_open())
+	{
+		if (flag)
+		{
+			cout << "\n\tThis user name and pass word already exist try again\n";
+			goto create;
+		}
+		else
+		{
+			strcpy(username, usn);
+			strcpy(userpass, usp);
+			strcpy(userphone, usphone);
+			strcpy(useridno, usidno);
+			usertype = ustype;
+		usermoney=money;
+			file.write((char *)this, sizeof(hotel));
+			cout << "\n\n\tMANGER ACCOUNT CREATED SUCCESSFULLY\n";
+		}
+		file.close();
+	}
+	else
+		cout << "\n\tFILE OPEN ERROR\n";
+}
+///////////&&&&&&&&
+//////////&&&&&&&&&
+void hotel::createemployee()
+{
+create:
+	int flag;
+	char usn[30];
+	char usp[30];
+	char usphone[30];
+	char usidno[30];
+	int ustype;
+
+    double tip;  
+	cout << "\n\tCreating employee account.....\n";
+	cout << "\tEnter the name :";
+	cin.getline(usn, 30);cout<<endl;
+	for (int a = 0; a <= 30; a++)
+	usn[a] = toupper(usn[a]);
+	cout << "\tEnter the password :";
+	cin.getline(usp, 30);
+   	cout<<endl;
+	cout << "\tEnter the phone number :";
+	cin.getline(usphone, 30);
+	cout<<endl;
+	cout << "\tEnter the id no :";
+	cin.getline(usidno, 30);
+	cout<<endl;
+us:
+	ustype = 2;
+	double money=0.0;
+	tip=0.0;
+	flag = checkuser2(usn, usp);
+	fstream file;
+	file.open("myhotel.jo", ios::in | ios::out | ios::app | ios::binary);
+	if (file.is_open())
+	{
+		if (flag)
+		{
+			cout << "\n\tThis user name and pass word already exist try again\n";
+			goto create;
+		}
+		else
+		{
+		    strcpy(createdby,name);
+			strcpy(username, usn);
+			strcpy(userpass, usp);
+			strcpy(userphone, usphone);
+			strcpy(useridno, usidno);
+			usertype = ustype;
+			usermoney=money;	
+	          usertip=tip;
+		file.write((char *)this, sizeof(hotel));
+cout << "\n\n\tEMPLOYEE ACCOUNT CREATED SUCCESSFULLY\n";
+		}
+		file.close();
+	}
+	else
+	{	cout << "\n\tFILE OPEN ERROR\n";}
+}
+void hotel::createcustomer()
+{
+create:
+double totalbedcost=0;
+	int flag1;
+	int flag2;
+	char usn[30];
+	char usp[30];
+	char usphone[30];
+	char usidno[30];
+    int bedno;
+    int days;
+	cout << "\tCreating customer account.......\n";
+	cout << "\tEnter the name :";
+	cin.getline(usn, 30);cout<<endl;
+	for (int a = 0; a <= 30; a++)
+		usn[a] = toupper(usn[a]);
+	cout << "\tEnter the password :";
+	cin.getline(usp, 30);cout<<endl;
+flag1= checkuser2(usn,usp);
+if(flag1)
+{
+cout<<"\n\tThis user name and password alredy exiat try another \n";
+goto create;
+}
+else 
+{
+  cout <<"\tEnter the phone number :";
+  cin.getline(usphone, 30);cout<<endl;
+  cout << "\tEnter the id no :";
+   cin.getline(usidno, 30);
+   cout<<endl;
+tryroom:
+ displaybeds();
+ cout<<"\tEnter the room no[1-40] :";
+  cin>>bedno;cout<<endl;
+  cin.ignore();
+  if((cin)&&(bedno>=1)&&(bedno<=40))
+  {
+flag2=checkroomno(bedno);
+if(flag2)
+{
+cout<<"\nThis room number is already booked try another\n";
+goto tryroom;
+}
+else 
+{
+tryday:
+cout<<"\tHow many days will you stay here\n";
+cout<<"\t[we can make only 365 days contract once]\n";
+cin>>days;
+if((cin)&&(days>=1)&&(days<=365))
+{
+fstream file;
+file.open("myhotel.jo",ios::out|ios::app|ios::app|ios::binary);
+	if (bedno >= 1 && bedno <= 20)
+		{
+		totalbedcost = bedcost[0]* days;
+		paymoneyemp(totalbedcost);
+		}
+	else if (bedno >= 21 && bedno <= 30)
+		{
+		totalbedcost = bedcost[1] * days;
+		paymoneyemp(totalbedcost);
+		}
+	else if (bedno >= 31 && bedno <= 40)
+			{
+		totalbedcost = bedcost[2]* days;
+		paymoneyemp(totalbedcost);
+			}
+strcpy(createdby,name);
+room_no=bedno;
+strcpy(username, usn);
+strcpy(userpass, usp);
+strcpy(userphone, usphone);	strcpy(useridno, usidno);
+usertype =3;
+strcpy(comment,"");
+file.write((char *)this, sizeof(hotel));
+cout << "\n\nCUSTOMER ACCOUNT CREATED SUCCESSFULLY  AND BOOKED A ROOM\n";
+file.close();
+}
+while((!cin)||(days<1)||(days>365))
+{
+cin.clear();
+cin.ignore();
+cout<<"\tInvalid input try again\n";
+goto tryday;
+}}}
+while((!cin)||(bedno<1)||(bedno>40))
+{
+cin.clear();
+cin.ignore();
+cout<<"\tInvalid input try again\n";
+goto tryroom;
+}}
+}
+void hotel::displaybeds()
+{
+cout<<"============================================================\n";
+  cout << "\t\tWE HAVR THREE BED LEVELS\n";
+	cout << "\t\tWE HAVE 40 BEDS IN TOTAL\n";
+cout<<"============================================================\n\n";
+	cout << "\tA.Level one rooms with one bed room : $"<<bedcost[0]<<endl;
+cout<<"\t[From bed no(1-20)]\n\n";
+cout<<"============================================================\n";	
+cout <<"\tB.Level two rooms with two bed rooms :$"<<bedcost[1]<<endl;
+cout<<"\t[From bed no (21-30)]\n\n"; 
+cout<<"============================================================\n";
+cout << "\tC.Level three VIP rooms\n";
+cout<<"\tHaving oversea views with two bed rooms :$"<<bedcost[2]<<endl;
+cout<<"\t[From bed no(31-40)]:\n\n\n";
+}
+
+//////@=@=&=@=&=&=
+
+void hotel::displaytradfood()
+{
+cout<<"============================================================\n\n";
+cout << "\t\tETHIOPIAN TRADITIONAL FOODS\n\n";
+cout<<"============================================================\n\n";
+cout <<"FOOD ITEM " << setw(30) << "COST($)\n";
+cout<<"-------------------------------------------------------\n";
+cout << "1.DORO WOT " << setw(30) <<tradfood[0]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "2.TEGABINO " << setw(30) <<tradfood[1]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout <<"3.BEYAYNET " << setw(29) <<tradfood[2]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "4.TIHELO " << setw(32) <<tradfood[4]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "5.DEFO DOBO " << setw(29) <<tradfood[5]<<endl<<endl;
+}
+void hotel::displayabroadfood()
+{
+cout<<"============================================================\n\n";
+cout <<"\t\tABROAD FOODS IN THIS RESTOURANT\n\n";
+cout<<"============================================================\n\n";
+cout <<"FOOD ITEMS " << setw(30) << "COST($)\n";
+cout<<"------------------------------------------------------\n";
+cout << "1.BURGER " << setw(32) <<abroadfood[0]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "2.VEGITERIAN BURGER " << setw(21) <<abroadfood[1]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "3.PITZA " << setw(33) <<abroadfood[2]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "4.SANDWITCH " << setw(29) <<abroadfood[3]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "5.SPHAGETY " << setw(30) <<abroadfood[4]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "6.STEAK " << setw(33) <<abroadfood[5]<<endl<<endl;
+}
+void hotel::displaytraddrink()
+{
+cout<<"============================================================\n\n";
+cout << "\tETHIOPIAN TRADITIONAL DRINKS IN THIS RESTOURANT\n\n";
+cout<<"============================================================\n";
+cout << "DRINK ITEM " << setw(30) << "COST($)\n";
+cout<<"-------------------------------------------------------\n";
+cout << "1.TELLA " << setw(33) <<traddrink[0]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "2.TEJ " << setw(35) <<traddrink[1]<<endl;	
+cout<<"-------------------------------------------------------\n";
+cout << "3.KOREFE " << setw(32) <<traddrink[2]<<endl<<endl;
+}
+void hotel::displayabroaddrink()
+{
+cout<<"============================================================\n\n";
+cout << "\tABROAD DRINKS INTHIS RESTOURANT\n\n";
+cout<<"============================================================\n\n";
+cout << "DRINK ITEM" << setw(30) << "COST($)\n";
+cout<<"-------------------------------------------------------\n";
+cout << "1.WINE " << setw(34) <<abroaddrink[0]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "2.BEER " << setw(34) <<abroaddrink[1]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "3.BLACK LEBEL " << setw(27) <<abroaddrink[2]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "4.VODKA " << setw(33) <<abroaddrink[3]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "5.BLUE LEBEL " << setw(28) <<abroaddrink[4]<<endl;
+cout<<"-------------------------------------------------------\n";
+cout << "6.SOFT DRINKS " << setw(27) <<abroaddrink[5]<<endl<<endl;
+}
+void hotel::showfood()
+{
+	char choice1;
+	int choice2;
+//char again;
+foodcat:
+	cout << "\n\t\tWE HAVE TWO CATEGORIES OF  FOOD \n\n";
+	cout << "\tA.TRADITIONAL ETHIPIAN FOODS\n";
+	cout << "\tB.ABROAD FOODS\n";
+	cout << "\tEnter your choice: ";
+	cin >> choice1;
+	cout<<endl;
+	choice1 = toupper(choice1);
+	cin.ignore();
+	if ((choice1 >= 65 && choice1 <= 66) && cin)
+	{
+		switch (choice1)
+		{
+		case 'A':
+		{
+		tradfoodchoice:
+			displaytradfood();
+			cout << "\tEnter your choice :";
+			cin >> choice2;
+			cout<<endl;
+			cin.ignore();
+			if ((choice2 >= 1 && choice2 <= 5) && cin)
+			{
+				switch (choice2)
+				{
+				case 1:
+				{
+			paymoneycus(tradfood[0]);
+			  	break;
+				}
+				case 2:
+				{
+	paymoneycus(tradfood[1]);
+					break;
+				}
+				case 3:
+				{
+		   paymoneycus(tradfood[2]);
+				break;
+				}
+				case 4:
+				{
+    paymoneycus(tradfood[3]);
+					break;
+				}
+				case 5:
+				{
+		paymoneycus(tradfood[4]);
+				break;
+				}
+				default:
+				{
+					cout << "\tinvalid input try again\n";
+					goto tradfoodchoice;
+				}
+				}
+			}
+			while ((choice2 < 1 || choice2 > 5) || !cin)
+			{
+				cin.clear();
+				cin.ignore();
+				cout << "\tInvalid choice try again\n";
+				goto tradfoodchoice;
+			}
+			break;
+		}
+		case 'B':
+		{
+		abroadfoodchoice:
+			displayabroadfood();
+			cout << "\tEnter your choice :";
+			cin >> choice2;
+			cout<<endl;
+			cin.ignore();
+			if ((choice2 >= 1 && choice2 <= 6) && cin)
+			{
+				switch (choice2)
+				{
+				case 1:
+				{
+		paymoneycus(abroadfood[0]);
+				break;
+				}
+			case 2:
+				{
+		paymoneycus(abroadfood[1]);
+					break;
+				}
+			case 3:
+			{
+	 paymoneycus(abroadfood[2]);
+		   	break;
+				}
+			case 4:
+			{
+	paymoneycus(abroadfood[3]);
+			break;
+				}
+				case 5:
+				{
+	paymoneycus(abroadfood[4]);
+				break;
+				}
+			case 6:
+			{
+	paymoneycus(abroadfood[5]);
+			break;
+				}
+			default:
+				{
+				cout << "\tinvalid choice try again\n";
+				goto abroadfoodchoice;
+				}
+				}
+			}
+			while ((choice2 < 1 || choice2 > 6) || !cin)
+			{
+				cin.clear();
+				cin.ignore();
+				cout << "\tInvalid choice try again\n";
+				goto abroadfoodchoice;
+			}
+			break;
+		}
+		default:
+		{
+			cout << "\tinvalid choice try again\n";
+			goto foodcat;
+		}
+		}
+	}
+	while ((choice1 < 65 || choice1 > 66) || !cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout << "\tInvalid choice try again\n";
+		goto foodcat;
+	}
+}
+/////////drink  //////
+void hotel::showdrink()
+{
+	char choice1;
+	int choice2;
+drinkcat:
+	cout << "\n\t\tWE HAVE TWO CATEGORIES OF DRINKS\n\n";
+	cout <<"\tA.TRADITIONAL ETHIOPIAN DRINKS\n";
+	cout << "\tB.ABROAD DRINKS :";
+	cin >> choice1;
+	cout<<endl;
+	cin.ignore();
+	choice1 = toupper(choice1);
+if ((choice1 >= 65 && choice1 <= 66) && cin)
+	{
+	switch (choice1)
+	{
+	case 'A':
+	{
+	traddrinkchoice:
+	displaytraddrink();
+	cout << "\tEnter your choice :";
+	cin >> choice2;
+	cout<<endl;
+	cin.ignore();
+if ((choice2 >= 1 && choice2 <= 3) && cin)
+	{
+switch (choice2)
+	{
+	case 1:
+	{
+	paymoneycus(traddrink[0]);
+		break;
+	}
+	case 2:
+	{
+	 paymoneycus(traddrink[1]);
+	  break; 
+	}
+   case 3:
+	{
+	paymoneycus(traddrink[2]);
+    break;
+  	}
+default:
+	{
+	cout << "\tInvalid input try again\n";
+   goto traddrinkchoice;
+	}
+	}
+	}
+while ((choice2 < 0 || choice2 > 3) || !cin)
+	{
+	cin.clear();
+	cin.ignore();
+	cout << "\tInvalid input try again\n";
+	goto traddrinkchoice;
+	}
+	break;
+	}
+	case 'B':
+	{
+	abdrink:
+	displayabroaddrink();
+	cout << "\tEnter your choice :";
+	cin >> choice2;cout<<endl;
+	cin.ignore();
+if ((choice2 >= 1 && choice2 <= 6) && cin)
+		{
+		switch (choice2)
+		{
+		case 1:
+		{
+	paymoneycus(abroaddrink[0]);
+		break;
+			}
+		case 2:
+		{
+paymoneycus(abroaddrink[1]);
+			break;
+		}
+	case 3:
+		{
+	paymoneycus(abroaddrink[2]);
+		break;
+		}
+	case 4:
+		{
+      paymoneycus(abroaddrink[3]);
+		break;
+		}
+		case 5:
+		{
+	paymoneycus(abroaddrink[4]);
+	break;
+		}
+	case 6:
+		{
+	paymoneycus(abroaddrink[5]);
+	break;
+		}
+	default:
+	{
+	cout << "\tInvalid input try again\n";		goto abdrink;
+ 	}
+	}
+	}
+while ((choice2 < 0 || choice2 > 6) || !cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout << "\tInvalid input try again\n";
+		goto abdrink;
+	}
+		break;
+	}
+	default:
+	{
+		cout << "\tInvalid choice try again\n";
+		goto abdrink;
+	}
+	}
+	}
+	while ((choice1 < 65 || choice1 > 66) || !cin)
+	{
+		cin.clear();
+		cin.ignore();
+		cout << "\tInvalid choice try again\n";
+		goto drinkcat;
+	}
+}
+
+void hotel::paymoneyemp(double price)
+{
+payto:
+int flag=0;
+double amount;
+char usn[30];
+
+fstream file;
+file.open("myhotel.jo", ios::out | ios::in | ios::binary);
+while (!file.eof()&&flag==0)
+{
+  file.read((char *)this, sizeof(hotel));
+ if((strcmp(username,name)==0)&&(strcmp(userpass,password)==0)&&(usertype==2))
+	{
+repay:
+cout<<"\tTOTAL COST="<<price<<endl;
+cout<<"\tPAY THE PRICE PLEASE :";
+cin>>amount;
+cout<<endl;
+cin.ignore();
+if(cin&&amount>0)
+{
+   if(amount==price)
+   {
+  double net;
+  net=amount-price;
+  pay(price);
+  paytip(net);
+//  cout<<"now ="<<usermoney<<endl;
+  int pos=(-1)*static_cast<int>(sizeof(hotel));
+  file.seekp(pos,ios::cur);
+  file.write((char*)this,sizeof(hotel));
+  }
+else if(amount>price)  
+{
+   double tip;
+   tip= amount-price;
+  cout<<"YOU GAVE $ "<<tip<<" TIP FOR OUR EMPLOYEE THANK YOU  \n";
+  pay(price);
+  paytip(tip);
+   int pos=(-1)*static_cast<int>(sizeof(hotel));
+  file.seekp(pos,ios::cur);
+  file.write((char*)this,sizeof(hotel)); 
+}
+else if(amount<price)
+{
+cout<<"\n\tINSUFFICIANT MONEY TRY AGAIN\n";
+goto repay;
+}}
+while(!cin||amount<=0)
+{
+cin.clear();
+cin.ignore();
+cout<<"\n\tINVALID INPUT TRY AGAIN\n";
+goto repay;
+}
+flag=1;
+}}
+if(flag==0)
+{cout<<"\n\tNO MATCHING ACCOUNT TRY AGAIN\n";
+goto payto;} 
+file.close();
+}
+///////&&$$&$$$$&$$&$$&&&&$$$
+void hotel::paymoneycus(double price)
+{
+payto:
+int flag=0;
+double amount;
+char usn[30];
+int flag2=0;
+char copyname[30];
+ fstream file2;
+ file2.open("myhotel.jo",ios::out|ios::in|ios::binary);
+while(!file2.eof()&&flag2==0)
+{
+file2.read((char*)this,sizeof(hotel));
+if((strcmp(username,name)==0)&&(strcmp(userpass,password)==0)&&(usertype==3))
+{
+strcpy(copyname,createdby);
+flag2=1;
+break;
+}}
+if(flag2==0)
+cout<<"!!No account found";
+file2.close();
+
+
+fstream file;
+file.open("myhotel.jo", ios::out | ios::in | ios::binary);
+while (!file.eof()&&flag==0)
+{
+  file.read((char *)this, sizeof(hotel));
+  if((strcmp(username,copyname)==0)&&(usertype==2))
+	{
+
+repay:
+cout<<"\tTOTAL COST="<<price<<endl;
+cout<<"\tPAY THE PRICE PLEASE :";
+cin>>amount;
+cout<<endl;
+cin.ignore();
+if(cin&&amount>0)
+{
+   if(amount==price)
+   {
+  double net;
+  net=amount-price;
+  pay(price);
+  paytip(net);
+//  cout<<"now ="<<usermoney<<endl;
+  int pos=(-1)*static_cast<int>(sizeof(hotel));
+  file.seekp(pos,ios::cur);
+  file.write((char*)this,sizeof(hotel));
+  }
+else if(amount>price)  
+{
+   double tip;
+   tip= amount-price;
+  cout<<"YOU GAVE $ "<<tip<<" TIP FOR OUR EMPLOYEE THANK YOU  \n";
+  pay(price);
+  paytip(tip);
+   int pos=(-1)*static_cast<int>(sizeof(hotel));
+  file.seekp(pos,ios::cur);
+  file.write((char*)this,sizeof(hotel)); 
+}
+else if(amount<price)
+{
+cout<<"\n\tINSUFFICIANT MONEY TRY AGAIN\n";
+goto repay;
+}}
+while(!cin||amount<=0)
+{
+cin.clear();
+cin.ignore();
+cout<<"\n\tINVALID INPUT TRY AGAIN\n";
+goto repay;
+}
+flag=1;
+}}
+if(flag==0)
+{cout<<"\n\tNO MATCHING ACCOUNT TRY AGAIN\n";
+goto payto;} 
+file.close();
+}
+///////////////&$&$&$&$$&$&$&$$$$
+void hotel::checkmymoneyemp()
+{
+ check:
+int flag=0;
+ fstream file;
+ file.open("myhotel.jo",ios::out|ios::in|ios::binary);
+ while(file.read((char*)this,sizeof(hotel)))
+ {
+  if((strcmp(username,name)==0)&&(strcmp(userpass,password)==0)&&(usertype==2))
+  {
+  cout<<"\n\t***************ACCOUNT DETAILS********:\n\n";
+  cout<<"\tENPLOYEE NAME : "<<username<<endl;
+  cout<<"\tYOU HAVE :$"<<usermoney<<endl; 
+  cout<<"\tTIP :$"<<usertip<<endl;
+flag=1;
+   }}
+ if(flag==0)
+ {
+ cout<<"\n\tNo matching account name try again\n";
+ goto check;
+ }}
+ 
+ ///////////&=&=@+&/&7&
+ void hotel::checkmymoneyman()
+{
+ check:
+ int flag=0;
+ fstream file;
+ file.open("myhotel.jo",ios::out|ios::in|ios::binary);
+ while(file.read((char*)this,sizeof(hotel)))
+ {
+  if((strcmp(username,name)==0)&&(strcmp(userpass,password)==0)&&(usertype==1))
+  {
+  cout<<"\n*******************ACCOUNT DETAILS*******\n";
+  cout<<"\tMANAGER NAME : "<<username<<endl;
+  cout<<"\tYOU HAVE : $"<<usermoney<<endl;
+flag=1;
+   }}
+ if(flag==0)
+ {
+ cout<<"\n\tNo matching account name try again\n";
+ goto check;
+ }}
+ 
+ 
+ 
+ 
+
+void hotel::transfermoney()
+{
+main:
+char copyname[30];
+int flag1=0;
+int flag2=0;
+double money=0;
+char usny[30];
+char usnt[30];
+fstream file;
+file.open("myhotel.jo",ios::out|ios::in|ios::binary);
+while(!file.eof()&&flag1==0)
+{
+file.read((char*)this,sizeof(hotel));
+if((strcmp(username,name)==0)&&(strcmp(userpass,password)==0)&&(usertype==2))
+{ 
+strcpy(copyname,createdby);
+money=usermoney;
+usermoney-=money;
+int pos=(-1)*static_cast<int>(sizeof(hotel));
+file.seekp(pos,ios::cur);
+file.write((char*)this,sizeof(hotel));
+flag1=1;
+}}
+if(flag1==0)
+{cout<<"\n\tNot found try again\n";
+goto main;
+}
+file.close();
+main2:
+fstream file2;
+file2.open("myhotel.jo",ios::out|ios::in|ios::binary);
+while(!file2.eof()&&flag2==0)
+{
+file2.read((char*)this,sizeof(hotel));
+if((strcmp(username,copyname)==0)&&(usertype==1))
+{
+usermoney+=money;
+int pos1=(-1)*static_cast<int>(sizeof(hotel));
+file2.seekp(pos1,ios::cur);
+file2.write((char*)this,sizeof(hotel));
+cout<<"\nSUCCUSSFULLY TRANSFERED : $"<<money<<" MONEY TO YOUR MANAGER : "<< copyname<<endl;
+flag2=1;
+break;
+}}
+
+file2.close();
+}
+
+///&=&=&=&=&=&=@=@=
+void hotel::putcomment()
+{
+put:
+char usn[30];
+char com[2000];
+int flag = 0;
+fstream file;
+file.open("myhotel.jo", ios::out | ios::in | ios::binary);
+if(file.is_open())
+{
+while (file.read((char *)this, sizeof(hotel)))
+	{
+if((strcmp(username,name)==0)&&(usertype==3))
+	{
+	cout <<"\n\tPut your comment : \n";
+	cin.getline(com,2000);
+     putcom(com);
+ int pos = (-1) * static_cast<int>(sizeof(hotel));
+file.seekp(pos, ios::cur);
+file.write((char *)this, sizeof(hotel));
+cout <<"\n\tTHANKS FOR YOU COMMENT\n";
+flag = 1;
+break;
+}}
+  if(flag==0)
+	{
+	cout<<"\tNOT SECCEEEDED PLEASE CHECK YOUR NAME AGAIN\n";
+	goto put;
+	}
+	file.close();
+	}
+else {cout<<"\tFILE OPEN ERROR \n";
+}}
+/////////$$$$@$@$@$@=@=@=@=
+void hotel::viewcomment()
+{
+int a = 0;
+fstream file;
+file.open("myhotel.jo" ,ios::in | ios::binary);
+if (file.is_open())
+{
+while (file.read((char *)this, sizeof(hotel)))
+{
+   if(usertype==3)
+ {
+cout<<"\tCUSTOMER NAME :"<<username<<endl;
+ cout<<"Comment :"<<comment<<endl;
+  cout<<"-------------------------------------------\n";
+  a++;
+ }}
+ if(a==0)
+ {cout<<"\tNO COMMENT YET\n";
+ }
+ file.close();
+}
+else {cout<<"\tFILE OPEN ERROR\n";}
+}
+
+//////@$@$@$@$$$$&&&
+void hotel::deletecustomer()
+{
+cout<<"\t***************OLD CUSTOMERS \n\n";
+displaycustomers();
+cout<<endl<<endl;
+int flag = 0;
+char confirm;
+char usn[30];
+char usp[30];
+int ustype=3;
+custdelete:
+//confirmdelete:
+cout << "Enter the name of the customer you want to delete :\n";
+cin.getline(usn, 30);
+for(int a=0;a<=20;a++)
+usn[a]=toupper(usn[a]);
+cout<<"Enter the password of the customer you want to delete :\n";
+cin.getline(usp,30);
+fstream filein;
+filein.open("myhotel.jo",ios::in|ios::binary);
+fstream fileout;
+fileout.open("temp.jo",ios::out|ios::binary);
+while(filein.read((char*)this,sizeof(hotel)))
+{
+ if((strcmp(username,usn)==0)&&(strcmp(userpass,usp)==0))
+ {del:
+cout<<"\t****************CUSTOMER DETAILS******\n\n";
+cout << "\tCUSTOMER NAME : " << username << endl;
+cout << "\tPASSWORD :" << userpass << endl;
+cout <<"\tROOM NO :" << room_no << endl;
+cout << "\tPhone no : " << userphone << endl;
+cout << "\tID NUMBER : " << useridno << endl;
+cout<<"\tUSER TYPE : "<<usertype<<endl;
+cout << "Do you want to delete this file Y(To delete ) or  ANY KEY(To stop ) :";
+cin >> confirm;
+cin.ignore();
+if(cin)
+{
+if(toupper(confirm)!='Y')
+{
+//filein.read((char*)this,sizeof(personinfo));
+fileout.write((char*)this,sizeof(hotel));
+cout<<"\nRECORED NOT DELETED OR NOT FOUND\n\n";
+}else 
+cout<<"===================RECORED DELETED======================\n\n";
+}
+while(!cin)
+{
+cin.clear();
+cin.ignore();
+cout<<"\n\tInvalid try again\n";
+goto del;
+}}
+else 
+{
+fileout.write((char*)this,sizeof(hotel));
+//goto custdelete;
+}
+}
+ filein.close();
+ fileout.close();
+ remove("myhotel.jo");
+ rename("temp.jo","myhotel.jo");
+}
+////////////&=&$&$&$&='='=$$$$$$$$$$$
+void hotel::deleteemployee()
+{
+cout<<"\t ****************OLD EMPLOYEES **********\n\n";
+displayemployees();
+cout<<endl<<endl;
+char confirm;
+char usn[30];
+char usp[30];
+int ustype=3;
+custdelete:
+//confirmdelete:
+cout<<"\nEMPLOYEE ACCOUNT CAN NOT BE DELETED IF THE EMOLOYEE HAS DEPT\n\n";
+cout<<"\nAND YOU HAVE TO DELETE THE CUSTOMER ACCOUNT CREATED BY THE DELETED ACCOUNT\n\n";
+cout << "\nEnter the name of the customer you want to delete :\n";
+cin.getline(usn, 30);
+for(int a=0;a<=20;a++)
+usn[a]=toupper(usn[a]);
+cout<<"Enter the password of the customer you want to delete :\n";
+cin.getline(usp,30);
+fstream filein;
+filein.open("myhotel.jo",ios::in|ios::binary);
+fstream fileout;
+fileout.open("temp.jo",ios::out|ios::binary);
+while(filein.read((char*)this,sizeof(hotel)))
+{
+ if((strcmp(username,usn)==0)&&(strcmp(userpass,usp)==0)&&(usermoney==0))
+ {del:
+cout<<"\t*********EMPLOYEE DETAILS*********\n\n";
+cout << "\tEMPLOYEE NAME : " << username << endl;
+cout << "\tPASSWORD :" << userpass << endl;
+cout <<"\tROOM NO :" << room_no << endl;
+cout << "\tPHONE NUMBER : " << userphone << endl;
+cout << "\tID NUMBER : " << useridno << endl;
+cout<<"\tUSER TYPE : "<<usertype<<endl;
+cout << "Do you want to delete this file Y(To delete ) or  ANY KEY(To stop ) :";
+cin >> confirm;
+cout<<endl;
+cin.ignore();
+if(cin)
+{
+if(toupper(confirm)!='Y')
+{
+//filein.read((char*)this,sizeof(personinfo));
+fileout.write((char*)this,sizeof(hotel));
+cout<<"\n\tRECORED NOT DELETED OR NOT FOUND\n\n";
+}else 
+{
+cout<<"==================RECORED DELETED==================\n\n";
+cout<<"YOU HAVE TO DELETE THE CUSTOMERS CREATED BY THIS EMPLOYEE\n";
+}}
+while(!cin)
+{
+cin.clear();
+cin.ignore();
+cout<<"\tinvalid try again\n";
+goto del;
+}}
+else 
+{
+fileout.write((char*)this,sizeof(hotel));
+//goto custdelete;
+}}
+ filein.close();
+ fileout.close();
+ remove("myhotel.jo");
+ rename("temp.jo","myhotel.jo");
+
+}
+
+
+
+
+
+
+
+
+
+
+void hotel::editcustomer()
+ {
+ cout<<"********************OLD CUSTOMERS*********\n";
+ displaycustomers();
+ cout<<endl<<endl;
+ char usn[30];
+ int rno;
+ int flag=0;
+ int pos;
+cout<<"\tEnter the user name you want to edit :\n";
+cin.getline(usn,30);
+for(int a=0;a<=30;a++)
+usn[a]=toupper(usn[a]);
+cout<<"\tEnter the room no you want to edit :";
+cin>>rno;
+cout<<endl;
+cin.ignore();
+  fstream file;
+  file.open("myhotel.jo",ios::in|ios::out|ios::binary);
+  if(file.is_open())
+  {
+ while(!file.eof())
+ {
+ pos=file.tellg();
+file.read((char*)this,sizeof(hotel));
+ if((strcmp(username,usn)==0)&&(room_no==rno))
+ {
+  cout<<"\tEnter the new data\n\n";
+  cout<<"\tNAME : ";
+  cin.getline(username,30);
+  cout<<endl;
+  for(int a=0;a<=30;a++)
+  username[a]=toupper(username[a]);
+  cout<<"\tPASSWORD :";
+  cin.getline(userpass,30);
+  cout<<endl;
+ cout<<"\tID NO :";
+  cin.getline(useridno,30);
+  cout<<endl;
+  cout<<"\tPHONE :";
+  cin.getline(userphone,30);
+  cout<<endl;
+  usertype=3;
+  strcpy(comment,"");
+ file.seekp(pos);
+//file.write(reinterpret_cast<char*>(&personinfo),sizeof(person));
+file.write((char*)this,sizeof(hotel));
+   cout<<"\n\t\tRECORED MODIFIED\n";
+   flag=1;
+   break;
+}}
+if(flag==0)
+ {
+ cout<<"\n!!!!!SORRY NOT SECEEDED PLEASE CHECK THE NAME AND ROOM NO \n";}
+ file.close();
+ }
+ else 
+ {
+ cout<<"\tError opening the file\n";
+ }}
+
+
+void hotel::editemployee()
+ {
+ cout<<"***********************OLD EMPLOYEES**********\n";
+displayemployees();
+ cout<<endl<<endl;
+ char usn[30];
+ char usp[30];
+ int flag=0;
+ int pos;
+cout<<"Enter the employee name you want to edit :\n";
+cin.getline(usn,30);
+for(int a=0;a<=30;a++)
+usn[a]=toupper(usn[a]);
+cout<<"Enter the employee password you want to edit :\n";
+cin.getline(usp,30);
+  fstream file;
+  file.open("myhotel.jo",ios::in|ios::out|ios::binary);
+  if(file.is_open())
+  {
+ while(!file.eof())
+ {
+ pos=file.tellg();
+file.read((char*)this,sizeof(hotel));
+ if((strcmp(username,usn)==0)&&(strcmp(userpass,usp)==0))
+ {
+  cout<<"\tEnter the new data :\n";
+  cout<<"\tNAME :";
+  cin.getline(username,30);
+  cout<<endl;
+  for(int a=0;a<=30;a++)
+  username[a]=toupper(username[a]);
+  cout<<"\tPASSWORD :";
+  cin.getline(userpass,30);
+  cout<<endl;
+ cout<<"\tID NO :";
+  cin.getline(useridno,30);
+  cout<<"\tPHONE NO :";
+  cin.getline(userphone,30);
+  cout<<endl;
+  usertype=2;
+ file.seekp(pos);
+//file.write(reinterpret_cast<char*>(&personinfo),sizeof(person));
+file.write((char*)this,sizeof(hotel));
+ cout<<"\n=================RECORED MODIFIED==\n\n";
+   flag=1;
+   break;
+}}
+if(flag==0)
+ {
+ cout<<"\n\tSORRY NOT SECEEDED PLEASE CHECK THE NAME AND PASSWORD\n";}
+ file.close();
+ }
+ else 
+ {
+ cout<<"\tError opening the file\n";
+ }}
+
+
+
+
+
+
+
+
+void hotel::displaycustomers()
+{
+	int a = 0;
+	fstream file;
+	file.open("myhotel.jo", ios::in| ios::binary);
+	if(file.is_open())
+	{
+	cout << "Name" << setw(28) << "Password" << setw(11) << "Room no" << setw(13) << "Phone\n";
+cout<<"------------------------------------------------------------\n";
+while (file.read((char *)this, sizeof(hotel)))
+	{
+	if(usertype==3)
+	{
+		cout << username << "\t\t" << userpass << "\t\t" << room_no << "\t" << userphone << endl;
+cout<<"created by :"<<createdby<<endl;
+cout<<"------------------------------------------------------\n";	
+		a++;
+	}}
+	if (a == 0)
+		cout << "\tAll ROOMS ARE VACANT\n";
+	file.close();
+	}
+	else
+	{cout<<"\tFile openning errror\n";}
+}
+///&&$$&&&&
+void hotel::displayemployees()
+{
+	int a = 0;
+	fstream file;
+	file.open("myhotel.jo", ios::in| ios::binary);
+	if(file.is_open())
+	{
+	cout << "Name" << setw(28) << "Password" << setw(11) << "ID NO"<< setw(13) << "Phone\n";
+cout<<"------------------------------------------------------------\n";
+while (file.read((char *)this, sizeof(hotel)))
+	{
+	if(usertype==2)
+	{
+		cout << username << "\t\t" << userpass << "\t\t" << useridno << "\t" << userphone << endl;
+cout<<"created by="<<createdby<<endl;
+cout<<"-----------------------------------------------------\n";		
+	a++;
+	}}
+	if (a == 0)
+		cout << "\tNO EMPLOYEE ACCOUNT\n";
+	file.close();
+	}
+	else
+	{cout<<"\tFile openning errror\n";}
+}
+///////&$$$$$$$$$$
+void hotel::searchcustomerNA()
+{
+searchcustomer:
+char usn[30];
+int flag=0;
+int pos;
+cout<<"\tENTER THE CUSTOMER NAME :";
+cin.getline(usn,30);
+cout<<endl;
+for(int a=0;a<=30;a++)
+usn[a]=toupper(usn[a]);
+fstream file;
+file.open("myhotel.jo",ios::in|ios::binary);
+if(file.is_open())
+{
+while(file.read((char*)this,sizeof(hotel)))
+{
+if((strcmp(username,usn)==0)&&(usertype==3))
+{
+cout<<"-------------------------------------------------------\n";
+cout<<"**************************CUSTOMER DETAILS ******\n\n";
+cout<<"\tNAME : "<<username<<endl;
+cout<<"\tROOM NO : "<<room_no<<endl;
+cout<<"\tID NUMEBR : "<<useridno<<endl;
+cout<<"\tPHONE NO : "<<userphone<<endl;
+flag=1;
+break;
+}}
+while(flag==0)
+{
+cout<<"\n\tSORRY NOT SUCCEEDED PLEASE CHECK THE NAME\n ";
+goto searchcustomer;
+}
+file.close();
+}
+else
+{cout<<"\tFILE OPENNING ERROR\n";
+}}
+////&$$$$$$$$$$$$$$$$$$$$$$
+void hotel::searchroomNO()
+{
+searchroom:
+int rno;
+int flag=0;
+cout<<"\tENTER THE ROOM NUMBER :";
+cin>>rno;
+cout<<endl;
+cin.ignore();
+fstream file;
+file.open("myhotel.jo",ios::in|ios::binary);
+if(file.is_open())
+{
+while(file.read((char*)this,sizeof(hotel)))
+{
+if((room_no==rno)&&(usertype==3))
+{
+cout<<"-------------------------------------------------------\n";
+cout<<"*******************ROOM DETAILS ******\n\n";
+cout<<"\tROOM NO : "<<room_no<<endl;
+cout<<"\tNAME : "<<username<<endl;
+cout<<"\tID NUMEBR : "<<useridno<<endl;
+cout<<"\tPHONE NO : "<<userphone<<endl;
+flag=1;
+break;
+}}
+while(flag==0)
+{
+cout<<"\ntSORRY NOT SUCCEEDED PLEASE CHECK THE ROOM NUMBER\n ";
+goto searchroom;
+}
+file.close();
+}
+else
+{cout<<"\tFILE OPENNING ERROR\n";
+}}
+//////////////@==$$$$$$$$$$$$
+
+void hotel::searchemployeeNA()
+{
+searchemployee:
+char usn[30];
+int flag=0;
+int pos;
+cout<<"\tENTER THE EMPLOYEE NAME: ";
+cin.getline(usn,30);
+cout<<endl;
+for(int a=0;a<=30;a++)
+usn[a]=toupper(usn[a]);
+fstream file;
+file.open("myhotel.jo",ios::in|ios::binary);
+if(file.is_open())
+{
+while(file.read((char*)this,sizeof(hotel)))
+{
+if((strcmp(username,usn)==0)&&(usertype==2))
+{
+cout<<"---------------------------------------------------\n";
+cout<<"**********************EMPLOYEE DETAILS ******\n\n";
+cout<<"\tNAME : "<<username<<endl;
+cout<<"\tID NUMEBR : "<<useridno<<endl;
+cout<<"\tPHONE NO : "<<userphone<<endl;
+flag=1;
+break;
+}}
+while(flag==0)
+{
+cout<<"\n\tSORRY NOT SUCCEEDED PLEASE CHECK THE NAME\n ";
+goto searchemployee;
+}
+file.close();
+}
+else
+{cout<<"\tFILE OPENNING ERROR\n";
+}}
+
+//////
+int main()
+{
+system("color 4f");
+
+hotel htl;
+ htl.login();
+ }

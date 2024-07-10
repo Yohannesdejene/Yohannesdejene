@@ -87,6 +87,43 @@
 </p>
 
 
+### Backend Development
+<p align="center"> 
+  &emsp;
+  <a href="https://nodejs.org/" target="_blank"> 
+    <img alt="Node.js" src="https://img.shields.io/badge/Node.js-%23339933.svg?style=plastic&logo=node.js&logoColor=white">
+  </a>   
+  &emsp;
+  <a href="https://expressjs.com/" target="_blank">
+    <img alt="Express.js" src="https://img.shields.io/badge/Express.js-%23000000.svg?style=plastic&logo=express&logoColor=white">
+  </a> 
+  &emsp;
+  <a href="https://nextjs.org" target="_blank">
+    <img alt="Next.js" src="https://img.shields.io/badge/Next.js-%23000000.svg?style=plastic&logo=next.js&logoColor=white">
+  </a>
+  &emsp;
+  <a href="https://www.mysql.com/" target="_blank">
+    <img alt="MySQL" src="https://img.shields.io/badge/MySQL-%234479A1.svg?style=plastic&logo=mysql&logoColor=white">
+  </a>
+  &emsp;
+  <a href="https://www.mongodb.com/" target="_blank">
+    <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=plastic&logo=mongodb&logoColor=white">
+  </a>
+  &emsp;
+  <a href="https://www.postgresql.org/" target="_blank">
+    <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-%x%233161B.svg?style=plastic&logo=postgresql&logoColor=white">
+  </a>
+  &emsp;
+  <a href="https://sequelize.org/" target="_blank">
+    <img alt="Sequelize" src="https://img.shields.io/badge/Sequelize-%2345B8D8.svg?style=plastic&logo=sequelize&logoColor=white">
+  </a>
+  &emsp;
+  <a href="https://www.prisma.io/" target="_blank">
+    <img alt="Prisma" src="https://img.shields.io/badge/Prisma-%232D3748.svg?style=plastic&logo=prisma&logoColor=white">
+  </a>
+</p>
+
+
  ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Software_Tools.gif?raw=true" width = 50px>  </picture> Software & Tools
  
 <p align="center">
@@ -122,12 +159,13 @@
  ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/OS.gif?raw=true" width = 50px>  </picture> Operating Systems
  
 <p align="center">
+	 &emsp;
+    <a href="#"><img src="https://img.shields.io/badge/Windows-0078D6?style=plastic&logo=windows&logoColor=white"></a>
   &emsp;
     <a href="#"><img src="https://img.shields.io/badge/Linux-FCC624?style=plastic&logo=linux&logoColor=black"></a>
   &emsp;
     <a href="#"><img src="https://img.shields.io/badge/Ubuntu-E95420?style=plastic&logo=ubuntu&logoColor=white"></a>
-  &emsp;
-    <a href="#"><img src="https://img.shields.io/badge/Windows-0078D6?style=plastic&logo=windows&logoColor=white"></a>
+ 
 
 </p>
 

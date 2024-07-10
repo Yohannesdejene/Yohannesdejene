@@ -62,10 +62,7 @@
     <img alt="CSS" src="https://img.shields.io/badge/CSS%20-%231572B6.svg?style=plastic&logo=css3&logoColor=white">
   </a> 
   &emsp;
-  <a href="https://www.learn-js.org/" target="_blank">
-    <img alt="Python" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTkG-WHBPUX4tuOikpAxtX8B8xtpLfU9QLxw&s">
-  </a>
-  &emsp;
+ 
   <a href="https://nextjs.org" target="_blank">
     <img alt="Next.js" src="https://img.shields.io/badge/Next.js-%23000000.svg?style=plastic&logo=next.js&logoColor=white">
   </a>

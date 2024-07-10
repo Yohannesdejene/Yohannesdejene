@@ -66,9 +66,30 @@
     <img alt="Python" src="https://img.shields.io/badge/react-%2361DAFB.svg?style=plastic&logo=React&logoColor=black">
   </a>
   &emsp;
+  <a href="https://nextjs.org" target="_blank">
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-%23000000.svg?style=plastic&logo=next.js&logoColor=white">
+</a>
+
+  &emsp;
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> 
      <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=plastic&logo=javascript&logoColor=black">
    </a>
+     &emsp;
+
+     <a href="https://mui.com" target="_blank">
+  <img alt="Material-UI" src="https://img.shields.io/badge/Material--UI-%230081CB.svg?style=plastic&logo=material-ui&logoColor=white">
+</a>
+&emsp;
+
+<a href="https://tailwindcss.com" target="_blank">
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=plastic&logo=tailwind-css&logoColor=white">
+</a>
+&emsp;
+
+   <a href="https://redux.js.org" target="_blank">
+  <img alt="Redux" src="https://img.shields.io/badge/Redux-%23593d88.svg?style=plastic&logo=redux&logoColor=white">
+</a>
+
 </p>
 
  ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Software_Tools.gif?raw=true" width = 50px>  </picture> Software & Tools

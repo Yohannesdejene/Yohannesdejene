@@ -41,11 +41,13 @@
   &emsp;
   &emsp;
    <a href="https://www.php.net/" target="_blank">
-    <img alt="php" src="https://kinsta.com/wp-content/uploads/2023/10/PHP_Feature-Image-1024x536.jpg" width = 50px>>
+	        <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=plastic&logo=javascript&logoColor=black">
+
+    <img alt="php" src="https://img.shields.io/badge/Php%20-%23F7DF1E.svg?style=plastic&logo=php&logoColor=black">
   </a>
 </p>
 
-### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Front_End.gif?raw=true" width = 50px>  </picture> Frontend Development
+### Frontend Development
 <p > 
   &emsp;
   <a href="https://www.w3.org/html/" target="_blank"> 
@@ -108,7 +110,7 @@
   </a>
   &emsp;
   <a href="https://www.postgresql.org/" target="_blank">
-    <img alt="PostgreSQL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Database-postgres.svg/424px-Database-postgres.svg.png?20220815123950?style=plastic&logo=postgresql&logoColor=white"  width = 50px height=20px>
+    <img alt="PostgreSQL" src="https://img.shields.io/badge/Postgress%20-%23F7DF1E.svg">
   </a>
   &emsp;
   <a href="https://sequelize.org/" target="_blank">

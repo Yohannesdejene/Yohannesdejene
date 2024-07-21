@@ -41,8 +41,6 @@
   &emsp;
   &emsp;
    <a href="https://www.php.net/" target="_blank">
-	        <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=plastic&logo=javascript&logoColor=black">
-
     <img alt="php" src="https://img.shields.io/badge/Php%20-%23F7DF1E.svg?style=plastic&logo=php&logoColor=black">
   </a>
 </p>

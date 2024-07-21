@@ -29,7 +29,7 @@
 
 ###  </picture> Programming languages
 
-<p align="center"> 
+<p > 
   &emsp;
 <a href="https://www.w3schools.com/typescript/" target="_blank">
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=plastic&logo=typescript&logoColor=white">
@@ -41,7 +41,7 @@
   &emsp;
   &emsp;
    <a href="https://www.php.net/" target="_blank">
-    <img alt="php" src="https://kinsta.com/wp-content/uploads/2023/10/PHP_Feature-Image-1024x536.jpg">
+    <img alt="php" src="https://kinsta.com/wp-content/uploads/2023/10/PHP_Feature-Image-1024x536.jpg" width = 50px>>
   </a>
 </p>
 
@@ -85,7 +85,7 @@
 
 
 ### Backend Development
-<p align="center"> 
+<p> 
   &emsp;
   <a href="https://nodejs.org/" target="_blank"> 
     <img alt="Node.js" src="https://img.shields.io/badge/Node.js-%23339933.svg?style=plastic&logo=node.js&logoColor=white">
@@ -119,55 +119,6 @@
     <img alt="Prisma" src="https://img.shields.io/badge/Prisma-%232D3748.svg?style=plastic&logo=prisma&logoColor=white">
   </a>
 </p>
-
-
- ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Software_Tools.gif?raw=true" width = 50px>  </picture> Software & Tools
  
-<p align="center">
-  &emsp;
-  <a href="#"><img alt="Git" src="https://img.shields.io/badge/Git%20-%23F05033.svg?style=plastic&logo=git&logoColor=white"></a>
-  &emsp;
-  <a href="#"><img alt="Jenkins" src="https://img.shields.io/badge/Jenkins-%232C5263.svg?style=plastic&logo=Jenkins&logoColor=white"></a>
-  &emsp;
-  <a href="#"><img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-%232671E5.svg?style=plastic&logo=github-actions&logoColor=white"></a>
-  &emsp;
-  <a href="#"><img alt="Apache" src="https://img.shields.io/badge/Apache-%23D22128.svg?style=plastic&logo=apache&logoColor=white"></a>
-  &emsp;
-  <a href="#"><img alt="Nginx" src="https://img.shields.io/badge/Nginx-%23269539.svg?style=plastic&logo=nginx&logoColor=white"></a>
-  &emsp;
-  <a href="#"><img alt="Jira" src="https://img.shields.io/badge/Jira-%230A83DC.svg?style=plastic&logo=jira&logoColor=white"></a>
-</p>
-
-
- 
-
- ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/CP_PS.gif?raw=true" width = 50px>  </picture> Competitive Programming & Problem Solving
- 
-<p align="center">
-  &emsp;
-    <a href="https://www.hackerrank.com/profile/yohannesdejene23"><img alt = "Codeforces" src="https://img.shields.io/badge/codeforces%20-%231F8ACB.svg?style=plastic&logo=codeforces&logoColor=white" /></a>	
-  &emsp;
-    <a href="https://leetcode.com/johnabi"><img alt = "Leetcode" src="https://img.shields.io/badge/leetcode%20-%23FFA116.svg?style=plastic&logo=leetcode&logoColor=black" /></a>
-  &emsp;
-  
-
-</p>
-
- ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/OS.gif?raw=true" width = 50px>  </picture> Operating Systems
- 
-<p align="center">
-	 &emsp;
-    <a href="#"><img src="https://img.shields.io/badge/Windows-0078D6?style=plastic&logo=windows&logoColor=white"></a>
-  &emsp;
-    <a href="#"><img src="https://img.shields.io/badge/Linux-FCC624?style=plastic&logo=linux&logoColor=black"></a>
-  &emsp;
-    <a href="#"><img src="https://img.shields.io/badge/Ubuntu-E95420?style=plastic&logo=ubuntu&logoColor=white"></a>
- 
-
-</p>
-
-
-
-	
-	
+		
 

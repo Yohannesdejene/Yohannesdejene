@@ -108,7 +108,7 @@
   </a>
   &emsp;
   <a href="https://www.postgresql.org/" target="_blank">
-    <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-%x%233161B.svg?style=plastic&logo=postgresql&logoColor=white">
+    <img alt="PostgreSQL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Database-postgres.svg/424px-Database-postgres.svg.png?20220815123950?style=plastic&logo=postgresql&logoColor=white">
   </a>
   &emsp;
   <a href="https://sequelize.org/" target="_blank">

@@ -27,7 +27,7 @@
 
 ## 🛠️ My Skills
 
-### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Programming_Languages.gif?raw=true" width = 50px>  </picture> Programming languages
+###  </picture> Programming languages
 
 <p align="center"> 
   &emsp;
@@ -39,17 +39,14 @@
      <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=plastic&logo=javascript&logoColor=black">
    </a>
   &emsp;
-<a href="https://www.w3schools.com/go/" target="_blank">
-  <img alt="Go" src="https://img.shields.io/badge/Go-%2300ADD8.svg?style=plastic&logo=go&logoColor=white">
-</a>
   &emsp;
-   <a href="https://www.python.org" target="_blank">
-    <img alt="Python" src="https://img.shields.io/badge/Python%20-%2314354C.svg?style=plastic&logo=python&logoColor=white">
+   <a href="https://www.php.net/" target="_blank">
+    <img alt="php" src="https://kinsta.com/wp-content/uploads/2023/10/PHP_Feature-Image-1024x536.jpg">
   </a>
 </p>
 
 ### <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Front_End.gif?raw=true" width = 50px>  </picture> Frontend Development
-<p align="center"> 
+<p > 
   &emsp;
   <a href="https://www.w3.org/html/" target="_blank"> 
     <img alt="HTML" src="https://img.shields.io/badge/HTML5%20-%23E34F26.svg?style=plastic&logo=html5&logoColor=white">

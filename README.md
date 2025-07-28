@@ -5,7 +5,7 @@
 
 - 🌱 I’m currently learning AI, RAG implementation
 
-- 💬 Ask me about **HTML5, CSS3, Bootstrap 4, shadcn, Javascript(ES6), Typescript, React.js, Next js**
+- 💬 Ask me about **HTML5, CSS3, Bootstrap 5, shadcn, Javascript(ES6), Typescript, React.js, Next js**
 
 - 📫 Reach me at **yohannesdejene23@gmail.com**
 

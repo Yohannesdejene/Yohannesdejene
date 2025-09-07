@@ -9,7 +9,6 @@
 
 - 📫 Reach me at **yohannesdejene23@gmail.com**
 
-- ⚡ Fun fact **When I'm stressed, nothing helps me more than singing 🎤.**
 
 ---
 

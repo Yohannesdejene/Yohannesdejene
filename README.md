@@ -7,7 +7,7 @@
 ---
 
 ### 🌱 About Me
-- 👯 I’m looking to collaborate on **React.js / Next.js + AI projects**  
+- 👯 I’m looking to collaborate on **React.js / Next.js + AI projects+Express js **  
 - 🌱 Currently learning **AI, RAG implementation**  
 - 💬 Ask me about **HTML5, CSS3, Bootstrap 5, Shadcn, JavaScript (ES6), TypeScript, React.js, Next.js, Express.js, Nest.js**  
 - 📫 Reach me at **yohannesdejene23@gmail.com**  

@@ -1,11 +1,11 @@
 <h1 align="center">Hi There! 👋, I'm Yohannes Dejene</h1>
-<h3 align="center">An aspiring Front end developer, excited to build, develop, and create. Currently working on Frontend development as HudHud Expres. I’m passionate about learning new technologies.</h3>
+<h3 align="center">An aspiring software engineer , excited to build, develop, and create. Profissional working on both  Frontend and backend  development. I’m passionate about learning new technologies.</h3>
 
 - 👯 I’m looking to collaborate on **React.js/Next js + AI based projects**
 
 - 🌱 I’m currently learning AI, RAG implementation
 
-- 💬 Ask me about **HTML5, CSS3, Bootstrap 5, shadcn, Javascript(ES6), Typescript, React.js, Next js**
+- 💬 Ask me about **HTML5, CSS3, Bootstrap 5, shadcn, Javascript(ES6), Typescript, React.js, Next js, Express js, Nest js**
 
 - 📫 Reach me at **yohannesdejene23@gmail.com**
 

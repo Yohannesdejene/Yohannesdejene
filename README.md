@@ -9,9 +9,8 @@
 ### 🌱 About Me
 - 👯 I’m looking to collaborate on  full-stack development, front end development ,backend development and AI projects.
 - 🌱 Currently learning **AI, RAG implementation**
-- 🤝 Looking for top-notch talent? You can hire me on Upwork  <a href="https://www.upwork.com/freelancers/~01a20310f713aefd72" target="_blank">
-  Here
-  </a>.
+- 🤝 Looking for top-notch talent? You can hire me on Upwork  <a href="https://www.upwork.com/freelancers/~01a20310f713aefd72" target="_blank"> Here</a>
+
 💬 Feel free to reach out if you have any questions or need assistance
 - 💬 Ask me about **HTML5, CSS3, Bootstrap 5, Shadcn, JavaScript (ES6), TypeScript, React.js, Next.js, Express.js, Nest.js**  
 - 📫 Reach me at **yohannesdejene23@gmail.com**  

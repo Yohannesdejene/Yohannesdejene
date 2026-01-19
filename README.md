@@ -34,6 +34,15 @@
   <a href="mailto:yohannesdejene23@gmail.com">
     <img src="https://img.shields.io/badge/-Gmail-red?style=flat&logo=gmail&logoColor=white" />
   </a>
+  <a href="https://t.me/johnabi" target="_blank">
+    <img src="https://img.shields.io/badge/-Telegram-26A5E4?style=flat&logo=telegram&logoColor=white" />
+  </a>
+  <a href="https://wa.me/251946951726" target="_blank">
+    <img src="https://img.shields.io/badge/-WhatsApp-25D366?style=flat&logo=whatsapp&logoColor=white" />
+  </a>
+  <a href="tel:+251946951726">
+    <img src="https://img.shields.io/badge/-Contact-black?style=flat&logo=phone&logoColor=white" />
+  </a>
 </p>
 
 ---

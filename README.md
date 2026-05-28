@@ -22,7 +22,7 @@
 |---------|-------------|------|
 | **Commercepal** | Multi-vendor e-commerce platform that allows users to browse & purchase products from multiple vendors. | [Visit Site](https://commercepal.com/browse) |
 | **Invitation Management App** | Built for Mazoom (Saudi Arabian clients) to manage invitations & track progress. | [Visit Site](https://beta.mazoom.sa/) |
-| **SMS Management Website** | Hudhud client platform for managing SMS services & monitoring progress. | [Visit Site](http://196.188.172.179:3008/) |
+
 
 ---
 
